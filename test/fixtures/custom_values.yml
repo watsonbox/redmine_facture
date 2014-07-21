@@ -1,0 +1,6 @@
+redmine_facture_custom_values_100:
+  customized_type: Enumeration
+  custom_field_id: 100
+  customized_id: 9
+  id: 100
+  value: "10"

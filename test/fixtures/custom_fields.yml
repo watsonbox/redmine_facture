@@ -1,0 +1,13 @@
+redmine_facture_custom_fields_100:
+  name: Price
+  regexp: ""
+  is_for_all: false
+  is_filter: false
+  type: TimeEntryActivityCustomField
+  possible_values: ""
+  id: 100
+  is_required: false
+  field_format: float
+  default_value: 0
+  editable: true
+  position: 1
