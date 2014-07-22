@@ -1,0 +1,21 @@
+enumerations_006:
+  name: High
+  id: 6
+  type: IssuePriority
+  active: true
+  position: 3
+  position_name: high3
+enumerations_009:
+  name: Design
+  id: 9
+  type: TimeEntryActivity
+  position: 1
+  active: true
+redmine_facture_enumerations_100:
+  name: Design
+  id: 100
+  parent_id: 9
+  project_id: 1
+  type: TimeEntryActivity
+  position: 1
+  active: true

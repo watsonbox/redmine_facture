@@ -1,8 +1,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::EnumerationsTest < Redmine::ApiTest::Base
-  fixtures :enumerations
-  ActiveRecord::Fixtures.create_fixtures(File.dirname(__FILE__) + '/../../fixtures/', [:custom_fields, :custom_values])
+  # Include plugin fixtures
+  ActiveRecord::Fixtures.create_fixtures(File.dirname(__FILE__) + '/../../fixtures/', [:custom_fields, :custom_values, :enumerations])
 
   def setup
     Setting.rest_api_enabled = '1'
@@ -33,6 +33,18 @@ class Redmine::ApiTest::EnumerationsTest < Redmine::ApiTest::Base
             assert_select 'value', :text => '10'
           end
         end
+      end
+    end
+  end
+
+  test "GET /enumerations/time_entry_activities.xml?project_id=1 should return project-overridden time entry activities" do
+    get '/enumerations/time_entry_activities.xml?project_id=1'
+    assert_response :success
+    assert_equal 'application/xml', response.content_type
+    assert_select 'time_entry_activities[type=array]' do
+      assert_select 'time_entry_activity' do
+        assert_select 'id', :text => '100' # The ID of the overridden activity
+        assert_select 'name', :text => 'Design'
       end
     end
   end
