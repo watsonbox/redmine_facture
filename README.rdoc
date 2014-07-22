@@ -1,3 +1,0 @@
-= redmine_facture
-
-Description goes here
