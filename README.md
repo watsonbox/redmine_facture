@@ -8,6 +8,8 @@ Most of these changes are just Redmine enhancements which I will submit to the c
 
 * The time entry activities API (enumerations) returns project-level overrides. When activities are overridden by a project, new enumeration records are created with a `project_id`. Passing a `project_id` parameter to the API replaces system-level activities with these where they exist. This allows Facture to match up time entry activities and their custom fields, since the time entries API does return project-level activity.
 
+* The time entries API includes the issue subject as well as ID. In the same way the names of users and projects are included, this is a useful piece of extra data.
+
 
 ## Todo
 
